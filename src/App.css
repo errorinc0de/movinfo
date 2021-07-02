@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Banner{
+  font-family: 'Akaya Kanadaka', cursive;
+  font-weight: bolder;
+  position: relative;
+  left: 0;
+  font-size: 45px;
+  margin: 0px 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-bar {
+  display: flex;
+  width: 90vw;
+  margin-right: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.genre-map {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.genre-block {
+  border: 2px solid #caf0f8;
+  border-radius: 10px;
+  margin: 30px 10px;
+  padding: 15px 7px;
+  background-color: #1115e070;
+  font-size: 28px;
+  color: #EFF9F0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.genre-header {
+  margin-left: 5px
+}
+
+.genre-movies {
+  margin-top: 30px;
+  display: flex;
+  overflow-x: auto;
+}
+
+
+.genre-movies::-webkit-scrollbar {
+  display: none;
+}
+
+.movie {  
+  width: 250px !important;
+  margin: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.movie-poster {
+  height: 300px;
+  width: 200px;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Banner {
+    font-size: 36px;
+    text-align: center;
   }
+
+  .search-bar {
+    margin-top: 30px;
+  }
+
+  .genre-header {
+    font-size: 20px;
+  }
+
+  .genre-movies {
+    margin-top: 15px;
+  }
+
+  .movie-poster {
+    height: 150px;
+    width: 100px;
+  }
+
+  .movie {
+    font-size: 12px;
+  }
+
+  .genre-block{
+    padding: 8px 7px;
+  }
+
 }
