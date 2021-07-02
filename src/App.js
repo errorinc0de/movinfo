@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import React from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import LandingPage from './landingPage';
 import MoviePage from './moviePage';
@@ -10,6 +9,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LandingPage}></Route>
+        <Route exact path="/browse" component={LandingPage}></Route>
         <Route exact path="/:id/:slugPath/" component={MoviePage}></Route>
       </Switch>
     </BrowserRouter>
