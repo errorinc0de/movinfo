@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import slugify from 'slugify';
 import image from './image404.jpg'
+import nts from './nts.png'
 import './LandingPage.css'
 
 function Bookmarks() {
@@ -46,11 +47,12 @@ function Bookmarks() {
                 <div className="header">
                     <div className="Banner">
                         Movinfo
+                        <span className="des"> Bookmarks</span>
                     </div>
                 </div>
                 <div className="bookmark-container">
                     <div className="inner-bookmark-container">
-                        {movieData.length>0 && movieData.map((each, key)=>{
+                        {movieData.length>0 ? movieData.map((each, key)=>{
                             console.log(each)
                             var slugURL = slugify(each.original_title,"-").toLowerCase()
                             return(
@@ -61,7 +63,14 @@ function Bookmarks() {
                                     </Link>
                                 </div>
                             )
-                        })}
+                        }) : (
+                            <div className="nts">
+                                Nothing to Show
+                                <img src={nts}></img>
+                            </div>
+                        )
+                    }
+
                     </div>
                 </div>
 
