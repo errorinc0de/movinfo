@@ -39,6 +39,12 @@
     margin-left: 10px;
 }
 
+.image-bookmark {
+    height: 295px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
 .detailsContainer {
     z-index: 5;
     display: flex;
@@ -147,8 +153,8 @@
     display: flex;
     right: 0;
     bottom: 0;
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.685);
     margin-right: 30px;
@@ -157,6 +163,33 @@
 
 .bookmarks img {
     margin: auto;
+}
+
+.bookmark-container {
+    background-color: #1115e070;
+    display: flex;
+}
+
+.inner-bookmark-container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow:row wrap;
+}
+
+.cards {
+
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background-color:rgba(255, 255, 255, 0.685);
+    border-radius: 10px;
+    font-size: 20px;
+
 }
 
 @media only screen and (max-width : 480px) {
@@ -186,7 +219,7 @@
         height:480px;
         margin: 10px;
     }
-    
+
     .detailsContainer {
         width: 94%;
         margin-bottom: 10px;
@@ -231,9 +264,28 @@
         position: absolute;
         left: auto;
         right: 0;
-        margin: 20px 8px;
+        margin: 20px 15px;
         font-size: 14px;
         padding: 10px;
+    }
+
+    .bookmarks{
+        margin-right: 20px;
+        margin-bottom: 20px;
+        height: 60px;
+        width: 60px;
+    }
+
+    .image-bookmark{
+        height: 30vh;
+    }
+
+    .cards{ 
+        font-size: 12px;
+    }
+
+    .bookmarks img {
+        height: 35px;
     }
 }
 

@@ -6,7 +6,8 @@ import './LandingPage.css'
 
 function MoviePage() {
     
-    const {id, slugPath} = useParams();
+    const {slugPath} = useParams();
+    const [id, setMovieId] = useState(null)
     const [isPresent, setIsPresent] = useState(false);
     const [movieData, setMovieData] = useState([])
     const [movieCred, setMovieCred] = useState([])
@@ -16,6 +17,11 @@ function MoviePage() {
     const apiKey = "e0e9872a83bd28fe24d2a0e74ec4ad49";
     const movieDetAPILink = `https://api.themoviedb.org/3/movie/${id}?api_key=` + apiKey;
     const movieCredsAPILink = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=` + apiKey;
+
+    useEffect(()=>{
+        setMovieId(localStorage.getItem(slugPath))
+        console.log(id)
+    },[])
 
     useEffect (()=>{
         fetch(movieDetAPILink).then(response => {
@@ -38,7 +44,7 @@ function MoviePage() {
 
             document.querySelector (`.stars-inner`).style.width = rating + "%";
         })
-    },[])
+    },[id])
 
     useEffect (()=>{
         fetch(movieCredsAPILink).then(response => {
@@ -54,7 +60,7 @@ function MoviePage() {
             setFilmCast (sortedCast)
             console.log (sortedCast)
         })
-    },[])
+    },[id])
 
     useEffect(()=>{
         if(movieCred && movieCred.crew) {
@@ -84,7 +90,7 @@ function MoviePage() {
     }
 
     useEffect(()=> {
-    
+        
     },[localStorage])
 
     return (

@@ -95,10 +95,11 @@ function LandingPage() {
                         </div>
                         <div className="genre-movies">
                             {options.results && options.results.map((movie) => {
-                                const slugPath = slugify(movie.original_title, "-")
+                                var slugPath = slugify(movie.original_title, "-")
+                                slugPath = slugPath.toLowerCase()
                                 return (
                                     <div className="movie">
-                                        <Link to={`/${movie.id}/${slugPath}/`}>
+                                        <Link to={`/${slugPath}/`} onClick={()=>{localStorage.setItem(slugPath,movie.id)}}>
                                             <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/" + movie.poster_path} className="movie-poster" onError={(e)=>{e.target.onerror = null; e.target.src=image }}/>
                                         </Link>
                                         {movie.original_title}{movie.release_date && (` (${movie.release_date.slice(0,4)})`)}
@@ -116,10 +117,11 @@ function LandingPage() {
                             </div>
                             <div className="genre-movies">
                                 {entry.data[0].results && entry.data[0].results.map(movie => {
-                                    const slugPath = slugify(movie.original_title, "-")
+                                    var slugPath = slugify(movie.original_title, "-")
+                                    slugPath = slugPath.toLowerCase()
                                     return (
                                         <div className="movie">
-                                        <Link to={`/${movie.id}/${slugPath}/`}>
+                                        <Link to={`/${slugPath}/`} onClick={()=>{localStorage.setItem(slugPath,movie.id)}}>
                                             <img src={"https://www.themoviedb.org/t/p/w600_and_h900_bestv2/" + movie.poster_path} alt="image" className="movie-poster" onError={(e)=>{e.target.onerror = null; e.target.src=image }}/>
                                         </Link>
                                         {movie.original_title}{movie.release_date && (` (${movie.release_date.slice(0,4)})`)}
